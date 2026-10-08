@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vyuha — AI & ML Association</title>
+    <meta name="description"
+        content="Vyuha is the AI & Machine Learning student association. Think Beyond Build Beyond. EST. 2026.">
+    <meta property="og:title" content="Vyuha — AI & ML Association">
+    <meta property="og:description"
+        content="Think Beyond Build Beyond. The AI & ML student association, inaugurated 2026.">
+    <meta property="og:type" content="website">
+    <link rel="icon" type="image/jpeg" href="mllogo.jpeg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script>
+        if (sessionStorage.getItem('vyuha_intro_shown') === 'true') {
+            document.documentElement.classList.add('intro-skipped');
+        }
+    </script>
+</head>
+
+<body>
+    <!-- ===== VYUHA CINEMATIC CIRCULAR VIDEO PRELOADER ===== -->
+    <div id="intro-screen">
+        <div class="intro-container">
+            <!-- Pure Circular Video Portal -->
+            <div class="intro-video-portal">
+                <div class="portal-ring-glow"></div>
+                <video id="intro-video" autoplay muted playsinline preload="auto">
+                    <source src="loading.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+        <!-- Skip Button -->
+        <button id="skipIntroBtn" class="skip-intro-btn" aria-label="Skip intro">
+            <span>SKIP</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+        </button>
+    </div>
+
+    <!-- ===== CURSOR GLOW ===== -->
+    <div id="cursor-glow"></div>
+
+    <!-- ===== NAVIGATION ===== -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo">
+                <img src="mllogo.jpeg" alt="Vyuha" class="nav-logo-img">
+
+                <img src="vyuhalogo.png" alt="Vyuha" width="100" height="30">
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#beginning">About</a></li>
+                <li><a href="#people">Members</a></li>
+                <li><a href="#explore">Explore</a></li>
+                <li><a href="#events">Events</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#resources">Resources</a></li>
+                <li><a href="#join" class="nav-cta">Join Vyuha</a></li>
+            </ul>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ===== HERO ===== -->
+    <section id="hero">
+        <canvas id="heroCanvas"></canvas>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-logo-wrap">
+                <div class="hero-ring hero-ring-1"></div>
+                <div class="hero-ring hero-ring-2"></div>
+                <div class="hero-ring hero-ring-3"></div>
+                <img src="mllogo.jpeg" alt="Vyuha Logo" class="hero-logo" id="heroLogo">
+            </div>
+            <h1 class="hero-title">
+                <img src="vyuhalogo.png" alt="Vyuha" class="hero-wordmark">
+                <span class="hero-title-sub">AI & ML ASSOCIATION</span>
+            </h1>
+            <p class="hero-tagline">Think Beyond. Build Beyond.</p>
+            <div class="hero-meta">
+                <span class="hero-est">EST. 2026</span>
+            </div>
+            <div class="hero-actions">
+                <a href="#beginning" class="btn-hero btn-hero-gold">
+                    <span>EXPLORE ASSOCIATION ✦</span>
+                </a>
+                <a href="#join" class="btn-hero btn-hero-outline">
+                    <span>JOIN VYUHA ✦</span>
+                </a>
+            </div>
+        </div>
+        <div class="scroll-indicator" id="scrollIndicator">
+            <span class="scroll-text">SCROLL</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- ===== THE BEGINNING ===== -->
+    <section id="beginning" class="section">
+        <div class="section-container">
+            <div class="section-label">01</div>
+            <h2 class="section-heading reveal-text">A NEW CHAPTER<br><span class="gold">BEGINS</span></h2>
+            <div class="beginning-content">
+                <div class="beginning-text">
+                    <p class="reveal-up">Vyuha is the AI & Machine Learning student association — a collective of
+                        curious minds who believe that the future of technology is built in classrooms, labs, and
+                        late-night coding sessions.</p>
+                    <p class="reveal-up">Born in 2026, Vyuha isn't about inheriting a legacy — it's about creating one.
+                        We are students who want to go beyond textbooks, explore the frontiers of artificial
+                        intelligence, and build things that matter.</p>
+                    <p class="reveal-up">This is where it starts. This is the beginning.</p>
+                </div>
+                <div class="beginning-visual">
+                    <div class="circuit-decoration">
+                        <svg viewBox="0 0 200 200" class="circuit-svg">
+                            <circle cx="100" cy="100" r="80" fill="none" stroke="var(--gold)" stroke-width="0.5"
+                                opacity="0.3" />
+                            <circle cx="100" cy="100" r="60" fill="none" stroke="var(--gold)" stroke-width="0.3"
+                                opacity="0.2" />
+                            <circle cx="100" cy="100" r="40" fill="none" stroke="var(--gold)" stroke-width="0.5"
+                                opacity="0.4" />
+                            <line x1="100" y1="0" x2="100" y2="200" stroke="var(--gold)" stroke-width="0.3"
+                                opacity="0.15" />
+                            <line x1="0" y1="100" x2="200" y2="100" stroke="var(--gold)" stroke-width="0.3"
+                                opacity="0.15" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== OUR VISION ===== -->
+    <!-- ===== OUR VISION ===== -->
+    <section id="vision" class="section section-dark">
+
+        <div class="vision-page">
+
+            <!-- Section Number -->
+            <div class="section-label">02</div>
+
+            <!-- Main Heading -->
+            <h2 class="section-heading reveal-text">
+                OUR <span class="gold">VISION</span>
+            </h2>
+
+            <!-- Hero Vision Statement -->
+            <div class="vision-hero reveal-up">
+
+                <div class="vision-small-title">
+                    BEYOND LEARNING. <span class="gold">TOWARDS CREATION.</span>
+                </div>
+
+                <h3>
+                    We don't just learn
+                    <span class="gold">Artificial Intelligence.</span>
+                    <br>
+                    We learn to
+                    <span class="gold">imagine what comes next.</span>
+                </h3>
+
+                <p>
+                    Vyuha is envisioned as a space where curiosity becomes capability,
+                    ideas become experiments, and experiments become solutions.
+                </p>
+
+            </div>
+
+
+
+
+
+
+
+            <!-- Four Vision Pillars -->
+            <div class="vision-pillars">
+
+                <div class="vision-pillar reveal-up">
+                    <span class="pillar-number">01</span>
+
+                    <h4>LEARN</h4>
+
+                    <p>
+                        Build strong foundations in AI, Machine Learning,
+                        Data Science, Computer Vision, Deep Learning and
+                        emerging technologies.
+                    </p>
+                </div>
+
+
+                <div class="vision-pillar reveal-up">
+                    <span class="pillar-number">02</span>
+
+                    <h4>EXPLORE</h4>
+
+                    <p>
+                        Encourage students to explore new technologies,
+                        research ideas, emerging trends and possibilities
+                        beyond the academic curriculum.
+                    </p>
+                </div>
+
+
+                <div class="vision-pillar reveal-up">
+                    <span class="pillar-number">03</span>
+
+                    <h4>CREATE</h4>
+
+                    <p>
+                        Turn concepts into real projects, prototypes and
+                        intelligent solutions that address meaningful
+                        problems around us.
+                    </p>
+                </div>
+
+
+                <div class="vision-pillar reveal-up">
+                    <span class="pillar-number">04</span>
+
+                    <h4>IMPACT</h4>
+
+                    <p>
+                        Develop technology with purpose and inspire students
+                        to use AI and ML to create solutions that can make
+                        a meaningful difference.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <!-- Closing Statement -->
+            <div class="vision-closing reveal-up">
+
+                <div class="vision-line"></div>
+
+                <p>
+                    THE FUTURE BELONGS TO THOSE WHO
+                    <span class="gold">BUILD IT.</span>
+                </p>
+
+                <span class="vision-mark">VYUHA — AI & ML ASSOCIATION</span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+ <!-- ===== THE PEOPLE ===== -->
+    <section id="people" class="section">
+        <div class="section-container">
+            <div class="section-label">03</div>
+            <h2 class="section-heading reveal-text">THE <span class="gold">PEOPLE</span></h2>
+            <p class="section-subtitle reveal-up">The minds behind Vyuha — faculty, leadership, and the crew that makes
+                it all happen.</p>
+
+            <!-- Faculty & Leadership -->
+            <div class="people-category" id="faculty-leadership">
+                <h3 class="category-title reveal-up"><span class="gold-line"></span>Faculty & Advisors</h3>
+                <div class="members-grid members-grid-featured">
+                    <div class="member-card featured-card reveal-up">
+                        <div class="member-card-inner">
+                            <div class="member-avatar"><img src="members/member-1.jpg" alt="Member photo"
+                                    onerror="this.classList.add('photo-missing'); this.style.display='none';"><span>RC</span>
+                            </div>
+                            <h4>Dr. Ramesh. C</h4>
+                            <p class="member-role">Patron</p>
+                        </div>
+                        <div class="card-circuit"></div>
+                    </div>
+                    <div class="member-card featured-card reveal-up">
+                        <div class="member-card-inner">
+                            <div class="member-avatar"><img src="members/member-2.jpg" alt="Member photo"
+                                    onerror="this.classList.add('photo-missing'); this.style.display='none';"><span>FT</span>
+                            </div>
+                            <h4>Mrs. Fathima T M</h4>
+                            <p class="member-role">Chairperson</p>
+                        </div>
+                        <div class="card-circuit"></div>
+                    </div>
+                    <div class="member-card featured-card reveal-up">
+                        <div class="member-card-inner">
+                            <div class="member-avatar"><img src="members/member-3.jpg" alt="Member photo"
+                                    onerror="this.classList.add('photo-missing'); this.style.display='none';"><span>SG</span>
+                            </div>
+                            <h4>Mr. Sujithkumar G</h4>
+                            <p class="member-role">Faculty Coordinator</p>
+                        </div>
+                        <div class="card-circuit"></div>
+                    </div>
+                    <div class="member-card featured-card reveal-up">
+                        <div class="member-card-inner">
+                            <div class="member-avatar"><img src="members/member-4.jpg" alt="Member photo"
+                                    onerror="this.classList.add('photo-missing'); this.style.display='none';"><span>RR</span>
+                            </div>
+                            <h4>Mrs. Rajisha R</h4>
+                            <p class="member-role">Faculty Coordinator</p>
+                        </div>
+                        <div class="card-circuit"></div>
+                    </div>
+                    <div class="member-card featured-card reveal-up">
+                        <div class="member-card-inner">
+                            <div class="member-avatar"><img src="members/member-5.jpg" alt="Member photo"
+                                    onerror="this.classList.add('photo-missing'); this.style.display='none';"><span>AV</span>
+                            </div>
+                            <h4>Ms. Anvitha V</h4>
+                            <p class="member-role">Faculty Member</p>
+                        </div>
+                        <div class="card-circuit"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- See All Members CTA -->
+        <div class="members-see-more">
+            <a href="members.html" class="btn-hero btn-hero-outline">
+                <span>SEE ALL MEMBERS ✦</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- ===== WHAT WE EXPLORE ===== -->
+    <section id="explore" class="section section-dark">
+        <div class="section-container">
+            <div class="section-label">04</div>
+            <h2 class="section-heading reveal-text">WHAT WE <span class="gold">EXPLORE</span></h2>
+            <div class="explore-grid">
+                <div class="explore-card reveal-up" data-delay="0">
+                    <div class="explore-icon">
+                        <svg viewBox="0 0 64 64" fill="none" stroke="var(--gold)" stroke-width="1.2">
+                            <circle cx="32" cy="20" r="12" />
+                            <circle cx="20" cy="44" r="8" />
+                            <circle cx="44" cy="44" r="8" />
+                            <line x1="28" y1="30" x2="22" y2="37" />
+                            <line x1="36" y1="30" x2="42" y2="37" />
+                        </svg>
+                    </div>
+                    <h3>Artificial Intelligence</h3>
+                    <p>The science of building intelligent systems that perceive, reason, and act.</p>
+                    <div class="explore-line"></div>
+                </div>
+                <div class="explore-card reveal-up" data-delay="0.05">
+                    <div class="explore-icon">
+                        <svg viewBox="0 0 64 64" fill="none" stroke="var(--gold)" stroke-width="1.2">
+                            <path d="M8 48 L20 28 L32 36 L44 16 L56 24" />
+                            <circle cx="20" cy="28" r="3" />
+                            <circle cx="32" cy="36" r="3" />
+                            <circle cx="44" cy="16" r="3" />
+                        </svg>
+                    </div>
+                    <h3>Machine Learning</h3>
+                    <p>Algorithms that learn patterns from data and improve through experience.</p>
+                    <div class="explore-line"></div>
+                </div>
+                <div class="explore-card reveal-up" data-delay="0.1">
+                    <div class="explore-icon">
+                        <svg viewBox="0 0 64 64" fill="none" stroke="var(--gold)" stroke-width="1.2">
+                            <rect x="8" y="8" width="48" height="48" rx="6" />
+                            <circle cx="24" cy="24" r="4" />
+                            <circle cx="40" cy="24" r="4" />
+                            <circle cx="32" cy="40" r="4" />
+                            <line x1="24" y1="28" x2="32" y2="36" />
+                            <line x1="40" y1="28" x2="32" y2="36" />
+                        </svg>
+                    </div>
+                    <h3>Deep Learning</h3>
+                    <p>Neural networks that unlock complex representations across layers of abstraction.</p>
+                    <div class="explore-line"></div>
+                </div>
+                <div class="explore-card reveal-up" data-delay="0.15">
+                    <div class="explore-icon">
+                        <svg viewBox="0 0 64 64" fill="none" stroke="var(--gold)" stroke-width="1.2">
+                            <rect x="12" y="12" width="40" height="30" rx="4" />
+                            <circle cx="32" cy="27" r="8" />
+                            <line x1="24" y1="50" x2="40" y2="50" />
+                            <line x1="32" y1="42" x2="32" y2="50" />
+                        </svg>
+                    </div>
+                    <h3>Computer Vision</h3>
+                    <p>Teaching machines to see, understand, and interpret the visual world.</p>
+                    <div class="explore-line"></div>
+                </div>
+                <div class="explore-card reveal-up" data-delay="0.2">
+                    <div class="explore-icon">
+                        <svg viewBox="0 0 64 64" fill="none" stroke="var(--gold)" stroke-width="1.2">
+                            <path d="M12 16h40M12 28h32M12 40h36M12 52h28" />
+                            <circle cx="52" cy="16" r="3" />
+                            <circle cx="44" cy="28" r="3" />
+                        </svg>
+                    </div>
+                    <h3>Natural Language Processing</h3>
+                    <p>Bridging the gap between human language and machine understanding.</p>
+                    <div class="explore-line"></div>
+                </div>
+                <div class="explore-card reveal-up" data-delay="0.25">
+                    <div class="explore-icon">
+                        <svg viewBox="0 0 64 64" fill="none" stroke="var(--gold)" stroke-width="1.2">
+                            <path d="M16 48 Q32 8 48 48" />
+                            <path d="M12 36 Q32 16 52 36" />
+                            <circle cx="32" cy="28" r="6" />
+                        </svg>
+                    </div>
+                    <h3>Generative AI</h3>
+                    <p>Creating new content — text, images, code, music — from learned patterns.</p>
+                    <div class="explore-line"></div>
+                </div>
+                <div class="explore-card reveal-up" data-delay="0.3">
+                    <div class="explore-icon">
+                        <svg viewBox="0 0 64 64" fill="none" stroke="var(--gold)" stroke-width="1.2">
+                            <circle cx="32" cy="20" r="10" />
+                            <rect x="24" y="30" width="16" height="20" rx="2" />
+                            <line x1="20" y1="38" x2="12" y2="44" />
+                            <line x1="44" y1="38" x2="52" y2="44" />
+                            <line x1="28" y1="50" x2="24" y2="58" />
+                            <line x1="36" y1="50" x2="40" y2="58" />
+                        </svg>
+                    </div>
+                    <h3>Robotics</h3>
+                    <p>Where intelligence meets the physical world — autonomous systems and beyond.</p>
+                    <div class="explore-line"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== WHAT WE DO ===== -->
+    <section id="activities" class="section">
+        <div class="section-container">
+            <div class="section-label">05</div>
+            <h2 class="section-heading reveal-text">WHAT WE <span class="gold">DO</span></h2>
+            <div class="activities-grid">
+                <div class="activity-item reveal-up">
+                    <span class="activity-number">01</span>
+                    <h3>Workshops</h3>
+                    <p>Hands-on sessions on AI frameworks, tools, and techniques led by students and invited experts.
+                    </p>
+                </div>
+                <div class="activity-item reveal-up">
+                    <span class="activity-number">02</span>
+                    <h3>Technical Talks</h3>
+                    <p>Deep-dive presentations on research papers, industry trends, and emerging technologies.</p>
+                </div>
+                <div class="activity-item reveal-up">
+                    <span class="activity-number">03</span>
+                    <h3>Projects</h3>
+                    <p>Collaborative builds that tackle real-world problems using AI and ML techniques.</p>
+                </div>
+                <div class="activity-item reveal-up">
+                    <span class="activity-number">04</span>
+                    <h3>Research & Papers</h3>
+                    <p>Journal clubs, paper discussions, and student-driven research initiatives.</p>
+                </div>
+                <div class="activity-item reveal-up">
+                    <span class="activity-number">05</span>
+                    <h3>Hackathons</h3>
+                    <p>High-energy coding marathons and competitions to push creative boundaries.</p>
+                </div>
+                <div class="activity-item reveal-up">
+                    <span class="activity-number">06</span>
+                    <h3>Peer Learning</h3>
+                    <p>Mentorship programs and study circles where experienced members guide newcomers.</p>
+                </div>
+                <div class="activity-item reveal-up">
+                    <span class="activity-number">07</span>
+                    <h3>Industry Interaction</h3>
+                    <p>Connecting with professionals, alumni, and companies working at the AI frontier.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== EVENTS ===== -->
+    <section id="events" class="section section-dark">
+        <div class="section-container">
+            <div class="section-label">06</div>
+            <h2 class="section-heading reveal-text"><span class="gold">EVENTS</span></h2>
+            <div class="events-timeline">
+                <div class="event-card reveal-up">
+                    <div class="event-date">
+                        <span class="event-year">2026</span>
+                        <span class="event-month">INAUGURATION</span>
+                    </div>
+                    <div class="event-details">
+                        <h3>The Grand Inauguration</h3>
+                        <p>The official launch of Vyuha — AI & ML Association. Marking the beginning of a new era in
+                            student-driven AI exploration and innovation.</p>
+                        <div class="event-meta">
+                            <span class="event-tag"> Founding Event</span>
+                            <span class="event-tag"> Seminar Hall</span>
+                        </div>
+                    </div>
+                    <div class="event-glow"></div>
+                </div>
+                <div class="event-card event-upcoming reveal-up">
+                    <div class="event-date">
+                        <span class="event-year">2026</span>
+                        <span class="event-month">COMING SOON</span>
+                    </div>
+                    <div class="event-details">
+                        <h3>First Hackathon</h3>
+                        <p>Challenge your problem-solving skills by solving real-world problems. Open to all students.
+                        </p>
+                        <div class="event-meta">
+                            <span class="event-tag"> Hackathon</span>
+                            <span class="event-tag"> Dates TBA</span>
+                        </div>
+                    </div>
+                    <div class="event-glow"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PROJECTS ===== -->
+
+
+    <section id="projects" class="section">
+        <div class="section-container">
+
+            <div class="section-label">07</div>
+
+            <h2 class="section-heading reveal-text">
+                <span class="gold">PROJECTS</span> & INNOVATION
+            </h2>
+
+            <p class="section-subtitle reveal-up">
+                Student-led initiatives and research projects taking shape at Vyuha.
+            </p>
+            <a href="#join" class="btn-hero btn-hero-gold">
+                <span>PITCH YOUR PROJECT ✦</span>
+            </a>
+
+
+
+        </div>
+    </section>
+
+
+
+
+    <!-- ===== RESOURCES ===== -->
+    <section id="resources" class="section section-dark">
+        <div class="section-container">
+            <div class="section-label">08</div>
+            <h2 class="section-heading reveal-text"><span class="gold">GALLERY</span></h2>
+            <p class="section-subtitle reveal-up"></p>
+            <div class="resources-grid">
+                <div class="resource-card reveal-up">
+                    <div class="resource-icon"></div>
+                    <h3></h3>
+                    <p></p>
+                </div>
+                <div class="resource-card reveal-up">
+                    <div class="resource-icon"></div>
+                    <h3></h3>
+                    <p></p>
+                </div>
+                <div class="resource-card reveal-up">
+                    <div class="resource-icon"></div>
+                    <h3></h3>
+                    <p></p>
+                </div>
+                <div class="resource-card reveal-up">
+                    <div class="resource-icon"></div>
+                    <h3></h3>
+                    <p></p>
+                </div>
+                <div class="resource-card reveal-up">
+                    <div class="resource-icon"></div>
+                    <h3></h3>
+                    <p></p>
+                </div>
+                <div class="resource-card reveal-up">
+                    <div class="resource-icon"></div>
+                    <h3></h3>
+                    <p></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== THE ROAD AHEAD ===== -->
+    <section id="roadahead" class="section">
+        <div class="section-container">
+            <div class="section-label">09</div>
+            <h2 class="section-heading reveal-text">THE ROAD <span class="gold">AHEAD</span></h2>
+            <div class="timeline">
+                <div class="timeline-line"></div>
+                <div class="timeline-item reveal-up">
+                    <div class="timeline-dot active"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-year">2026</span>
+                        <h3>Vyuha Begins</h3>
+                        <p>The inauguration. The first team. The first logo. It starts here.</p>
+                    </div>
+                </div>
+                <div class="timeline-item reveal-up">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-year">2026–27</span>
+                        <h3>First Workshops & Projects</h3>
+                        <p>Hands-on learning sessions, the first collaborative projects, building our foundation.</p>
+                    </div>
+                </div>
+                <div class="timeline-item reveal-up">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-year">2027</span>
+                        <h3>Hackathons & Competitions</h3>
+                        <p>Representing Vyuha in national-level technical competitions and hackathons.</p>
+                    </div>
+                </div>
+                <div class="timeline-item reveal-up">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-year">BEYOND</span>
+                        <h3>The Future is Unwritten</h3>
+                        <p>Research papers. Industry partnerships. Alumni network. The chapters we haven't imagined yet.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <p class="road-statement reveal-up">"The future is unwritten — and we hold the pen."</p>
+        </div>
+    </section>
+
+    <!-- ===== JOIN VYUHA ===== -->
+    <section id="join" class="section section-dark section-join">
+        <div class="section-container">
+            <div class="section-label">10</div>
+            <h2 class="section-heading reveal-text">BUILD THE FUTURE<br><span class="gold">WITH US</span></h2>
+            <p class="join-subtitle reveal-up">Ready to explore the frontiers of AI and machine learning? Join Vyuha and
+                be part of something extraordinary.</p>
+            <div class="join-form-wrap reveal-up">
+                <form id="joinForm" class="join-form" onsubmit="handleJoinSubmit(event)">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="joinName">Full Name</label>
+                            <input type="text" id="joinName" placeholder="Your name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="joinEmail">Email</label>
+                            <input type="email" id="joinEmail" placeholder="you@example.com" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="joinYear">Year / Branch</label>
+                            <input type="text" id="joinYear" placeholder="e.g. 2nd Year, CSE (DS)">
+                        </div>
+                        <div class="form-group">
+                            <label for="joinInterest">Areas of Interest</label>
+                            <input type="text" id="joinInterest" placeholder="e.g. NLP, Computer Vision">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="joinGithub">GitHub (optional)</label>
+                            <input type="url" id="joinGithub" placeholder="https://github.com/username">
+                        </div>
+                        <div class="form-group">
+                            <label for="joinLinkedin">LinkedIn (optional)</label>
+                            <input type="url" id="joinLinkedin" placeholder="https://linkedin.com/in/username">
+                        </div>
+                    </div>
+                    <button type="submit" class="btn-join" id="joinBtn">
+                        <span>JOIN VYUHA</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer id="footer">
+        <div class="footer-container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <img src="mllogo.jpeg" alt="Vyuha" class="footer-logo">
+                    <div>
+                        <h3>VYUHA</h3>
+                        <p>AI & ML Association</p>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-col">
+                        <h4>Navigate</h4>
+                        <a href="#beginning">About</a>
+                        <a href="#people">Members</a>
+                        <a href="#explore">Explore</a>
+                        <a href="#events">Events</a>
+                    </div>
+                    <div class="footer-col">
+                        <h4>More</h4>
+                        <a href="#projects">Projects</a>
+                        <a href="#resources">Resources</a>
+                        <a href="#roadahead">Road Ahead</a>
+                        <a href="#join">Join Us</a>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Connect</h4>
+                        <a href="#" target="_blank">Instagram ↗</a>
+                        <a href="#" target="_blank">LinkedIn ↗</a>
+                        <a href="#" target="_blank">GitHub ↗</a>
+                        <a href="mailto:vyuha@college.edu">Email ↗</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Vyuha — AI & ML Association. Where curiosity becomes intelligence.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== BACK TO TOP BUTTON ===== -->
+    <button id="backToTop" class="back-to-top" aria-label="Back to top">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M12 19V5M5 12l7-7 7 7" />
+        </svg>
+    </button>
+
+    <!-- GSAP + ScrollTrigger CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Members — Vyuha AI & ML Association</title>
+    <meta name="description"
+        content="Meet the full team behind Vyuha — faculty, leadership, executive committee and class representatives.">
+    <link rel="icon" type="image/jpeg" href="mllogo.jpeg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* ── PAGE-SPECIFIC OVERRIDES ── */
+        .members-page-hero {
+            padding: 10rem 0 5rem;
+            text-align: center;
+            background: radial-gradient(ellipse at 50% -10%, rgba(212, 175, 55, 0.08) 0%, transparent 60%);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+        }
+
+        .members-page-hero .section-label {
+            margin-bottom: 1.5rem;
+        }
+
+        .members-page-title {
+            font-family: var(--font-display);
+            font-size: clamp(2.8rem, 6vw, 5rem);
+            font-weight: 900;
+            letter-spacing: 8px;
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+
+        .members-page-subtitle {
+            font-size: 1rem;
+            color: var(--gray);
+            max-width: 500px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        .members-back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--gray);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .members-back-btn:hover {
+            color: var(--gold);
+        }
+
+        .members-back-btn svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        /* Stats bar */
+        .members-stats {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            padding: 2.5rem 0;
+            border-top: 1px solid rgba(212, 175, 55, 0.08);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.08);
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-family: var(--font-display);
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--gold);
+            display: block;
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-family: var(--font-mono);
+            font-size: 0.65rem;
+            letter-spacing: 2px;
+            color: var(--gray);
+            margin-top: 0.4rem;
+            display: block;
+        }
+
+        /* Category header */
+        .members-full-section {
+            padding: 5rem 0;
+        }
+
+        .members-category-wrap {
+            margin-bottom: 5rem;
+        }
+
+        .category-header {
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .category-number {
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            letter-spacing: 3px;
+            color: var(--gold);
+            opacity: 0.6;
+        }
+
+        .category-name {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--gold);
+        }
+
+        .category-line {
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(90deg, rgba(212, 175, 55, 0.3), transparent);
+        }
+
+        .category-count {
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            color: var(--gray-dim);
+            letter-spacing: 1px;
+        }
+
+        /* Featured (faculty) grid — larger cards */
+        .members-grid-featured-full {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+
+        /* Regular grid */
+        .members-grid-full {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            gap: 1.2rem;
+        }
+
+        /* Card inner polish for this page */
+        .member-card {
+            cursor: default;
+        }
+
+        @media (max-width: 600px) {
+            .members-stats {
+                gap: 1.5rem;
+            }
+
+            .members-grid-featured-full {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .members-grid-full {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- ===== CURSOR GLOW ===== -->
+    <div id="cursor-glow"></div>
+
+    <!-- ===== NAVIGATION ===== -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="mllogo.jpeg" alt="Vyuha" class="nav-logo-img">
+                <img src="vyuhalogo.png" alt="Vyuha" width="100" height="30">
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html#beginning">About</a></li>
+                <li><a href="index.html#people" class="active" style="color:var(--gold)">Members</a></li>
+                <li><a href="index.html#explore">Explore</a></li>
+                <li><a href="index.html#events">Events</a></li>
+                <li><a href="index.html#projects">Projects</a></li>
+                <li><a href="index.html#resources">Resources</a></li>
+                <li><a href="index.html#join" class="nav-cta">Join Vyuha</a></li>
+            </ul>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ===== MEMBERS PAGE HERO ===== -->
+    <div class="members-page-hero">
+        <div class="section-container">
+            <div class="section-label">THE TEAM</div>
+            <h1 class="members-page-title">THE PEOPLE</h1>
+            <p class="members-page-subtitle">Faculty, leadership, executive committee, and every mind that makes Vyuha
+                what it is.</p>
+        </div>
+    </div>
+
+    <!-- ===== STATS BAR ===== -->
+    <div class="section-container">
+        <div class="members-stats">
+            <div class="stat-item">
+                <span class="stat-number">5</span>
+                <span class="stat-label">Faculty & Advisors</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">5</span>
+                <span class="stat-label">Core Team</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">12</span>
+                <span class="stat-label">Executive Committee</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">5</span>
+                <span class="stat-label">Class Representatives</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">27</span>
+                <span class="stat-label">Total Members</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== ALL MEMBERS ===== -->
+
+
+    <!-- ===== THE PEOPLE ===== -->
+    <section id="people" class="section">
+        <div class="section-container">
+
+            <!-- Faculty & Leadership -->
+            <div class="people-category" id="faculty-leadership">
+                <h3 class="category-title reveal-up"><span class="gold-line"></span>Faculty & Advisors</h3>
+                <div class="members-grid members-grid-featured">
+                    <div class="member-card featured-card reveal-up">
+                        <div class="member-card-inner">
+                            <div class="member-avatar"><img src="members/member-1.jpg" alt="Member photo"
+                                    onerror="this.classList.add('photo-missing'); this.style.display='none';"><span>RC</span>
+                            </div>
+                            <h4>Dr. Ramesh. C</h4>
+                            <p class="member-role">Patron</p>
+                        </div>
+                        <div class="card-circuit"></div>
+                    </div>
+                    <div class="member-card featured-card reveal-up">
+                        <div class="member-card-inner">
+                            <div class="member-avatar"><img src="members/member-2.jpg" alt="Member photo"
+                                    onerror="this.classList.add('photo-missing'); this.style.display='none';"><span>FT</span>
+                            </div>
+                            <h4>Mrs. Fathima T M</h4>
+                            <p class="member-role">Chairperson</p>
+                        </div>
+                        <div class="card-circuit"></div>
+                    </div>
+                    <div class="member-card featured-card reveal-up">
+                        <div class="member-card-inner">
+                            <div class="member-avatar"><img src="members/member-3.jpg" alt="Member photo"
+                                    onerror="this.classList.add('photo-missing'); this.style.display='none';"><span>SG</span>
+                            </div>
+                            <h4>Mr. Sujithkumar G</h4>
+                            <p class="member-role">Faculty Coordinator</p>
+                        </div>
+                        <div class="card-circuit"></div>
+                    </div>
+                    <div class="member-card featured-card reveal-up">
+                        <div class="member-card-inner">
+                            <div class="member-avatar"><img src="members/member-4.jpg" alt="Member photo"
+                                    onerror="this.classList.add('photo-missing'); this.style.display='none';"><span>RR</span>
+                            </div>
+                            <h4>Mrs. Rajisha R</h4>
+                            <p class="member-role">Faculty Coordinator</p>
+                        </div>
+                        <div class="card-circuit"></div>
+                    </div>
+                    <div class="member-card featured-card reveal-up">
+                        <div class="member-card-inner">
+                            <div class="member-avatar"><img src="members/member-5.jpg" alt="Member photo"
+                                    onerror="this.classList.add('photo-missing'); this.style.display='none';"><span>AV</span>
+                            </div>
+                            <h4>Ms. Anvitha V</h4>
+                            <p class="member-role">Faculty Member</p>
+                        </div>
+                        <div class="card-circuit"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Core Team -->
+            <div class="people-category" id="core-team">
+                <h3 class="category-title reveal-up"><span class="gold-line"></span>Core Team</h3>
+                <div class="members-grid">
+                    <div class="member-card reveal-up">
+                        <div class="member-card-inner">
+                            <div class="member-avatar"><img src="members/member-6.jpg" alt="Member photo"
+                                    onerror="this.classList.add('photo-missing'); this.style.display='none';"><span>FF</span>
+                            </div>
+                            <h4>Mr. Favas Faizal</h4>
+                            <p class="member-role">President</p>
+                        </div>
+                        <div class="card-circuit"></div>
+                    </div>
+                    <div class="member-card reveal-up">
+                        <div class="member-card-inner">
+                            <div class="member-avatar"><img src="members/member-7.jpg" alt="Member photo"
+                                    onerror="this.classList.add('photo-missing'); this.style.display='none';"><span>FS</span>
+                            </div>
+                            <h4>Ms. Fiona Sajeev</h4>
+                            <p class="member-role">Vice President</p>
+                        </div>
+                        <div class="card-circuit"></div>
+                    </div>
+                    <div class="member-card reveal-up">
+                        <div class="member-card-inner">
+                            <div class="member-avatar"><img src="members/member-8.jpg" alt="Member photo"
+                                    onerror="this.classList.add('photo-missing'); this.style.display='none';"><span>AT</span>
+                            </div>
+                            <h4>Ms. Athulya</h4>
+                            <p class="member-role">Secretary</p>
+                        </div>
+                        <div class="card-circuit"></div>
+                    </div>
+                    <div class="member-card reveal-up">
+                        <div class="member-card-inner">
+                            <div class="member-avatar"><img src="members/member-9.jpg" alt="Member photo"
+                                    onerror="this.classList.add('photo-missing'); this.style.display='none';"><span>AP</span>
+                            </div>
+                            <h4>Ms. Archana Pillai</h4>
+                            <p class="member-role">Joint Secretary</p>
+                        </div>
+                        <div class="card-circuit"></div>
+                    </div>
+                    <div class="member-card reveal-up">
+                        <div class="member-card-inner">
+                            <div class="member-avatar"><img src="members/member-10.jpg" alt="Member photo"
+                                    onerror="this.classList.add('photo-missing'); this.style.display='none';"><span>GD</span>
+                            </div>
+                            <h4>Mr. Gangadhath</h4>
+                            <p class="member-role">Treasurer</p>
+                        </div>
+                        <div class="card-circuit"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Executive Committee -->
+            <div class="people-category" id="executive-committee">
+                <h3 class="category-title reveal-up"><span class="gold-line"></span>Executive Committee</h3>
+                <div class="members-grid">
+                    <div class="member-card reveal-up">
+                        <div class="member-card-inner">
+                            <div class="member-avatar"><img src="members/member-11.jpg" alt="Member photo"
+                                    onerror="this.classList.add('photo-missing'); this.style.display='none';"><span>AA</span>
+                            </div>
+                            <h4>Mr. Abhijith Ajith</h4>
+                            <p class="member-role">Technical Coordinator</p>
+                        </div>
+                        <div class="card-circuit"></div>
+                    </div>
+                    <div class="member-card reveal-up">
+                        <div class="member-card-inner">
+                            <div class="member-avatar"><img src="members/member-12.jpg" alt="Member photo"
+                                    onerror="this.classList.add('photo-missing'); this.style.display='none';"><span>AS</span>
+                            </div>
+                            <h4>Mr. Alwin Shijo</h4>
+                            <p class="member-role">Technical Coordinator</p>
+                        </div>
+                        <div class="card-circuit"></div>
+                    </div>
+                    <div class="member-card reveal-up">
+                        <div class="member-card-inner">
+                            <div class="member-avatar"><img src="members/member-13.jpg" alt="Member photo"
+                                    onerror="this.classList.add('photo-missing'); this.style.display='none';"><span>AV</span>
+                            </div>
+                            <h4>Ms. Anjali V A</h4>
+                            <p class="member-role">Technical Coordinator</p>
+                        </div>
+                        <div class="card-circuit"></div>
+                    </div>
+                    <div class="member-card reveal-up">
+                        <div class="member-card-inner">
+                            <div class="member-avatar"><img src="members/member-14.jpg" alt="Member photo"
+                                    onerror="this.classList.add('photo-missing'); this.style.display='none';"><span>AM</span>
+                            </div>
+                            <h4>Mr. Aman</h4>
+                            <p class="member-role">Design & Creative Coordinator</p>
+                        </div>
+                        <div class="card-circuit"></div>
+                    </div>
+                    <div class="member-card reveal-up">
+                        <div class="member-card-inner">
+                            <div class="member-avatar"><img src="members/member-15.jpg" alt="Member photo"
+                                    onerror="this.classList.add('photo-missing'); this.style.display='none';"><span>AK</span>
+                            </div>
+                            <h4>Ms. Akshara</h4>
+                            <p class="member-role">Design & Creative Coordinator</p>
+                        </div>
+                        <div class="card-circuit"></div>
+                    </div>
+                    <div class="member-card reveal-up">
+                        <div class="member-card-inner">
+                            <div class="member-avatar"><img src="members/member-16.jpg" alt="Member photo"
+                                    onerror="this.classList.add('photo-missing'); this.style.display='none';"><span>SR</span>
+                            </div>
+                            <h4>Mr. Sreehari</h4>
+                            <p class="member-role">Event Coordinator</p>
+                        </div>
+                        <div class="card-circuit"></div>
+                    </div>
+                    <div class="member-card reveal-up">
+                        <div class="member-card-inner">
+                            <div class="member-avatar"><img src="members/member-17.jpg" alt="Member photo"
+                                    onerror="this.classList.add('photo-missing'); this.style.display='none';"><span>AJ</span>
+                            </div>
+                            <h4>Mr. Arjun V Jyothy</h4>
+                            <p class="member-role">Event Coordinator</p>
+                        </div>
+                        <div class="card-circuit"></div>
+                    </div>
+                    <div class="member-card reveal-up">
+                        <div class="member-card-inner">
+                            <div class="member-avatar"><img src="members/member-18.jpg" alt="Member photo"
+                                    onerror="this.classList.add('photo-missing'); this.style.display='none';"><span>AT</span>
+                            </div>
+                            <h4>Mr. Arjun T Anil</h4>
+                            <p class="member-role">Event Coordinator</p>
+                        </div>
+                        <div class="card-circuit"></div>
+                    </div>
+                    <div class="member-card reveal-up">
+                        <div class="member-card-inner">
+                            <div class="member-avatar"><img src="members/member-19.jpg" alt="Member photo"
+                                    onerror="this.classList.add('photo-missing'); this.style.display='none';"><span>AS</span>
+                            </div>
+                            <h4>Mr. Akshanth Santhosh</h4>
+                            <p class="member-role">Media & Documentation</p>
+                        </div>
+                        <div class="card-circuit"></div>
+                    </div>
+                    <div class="member-card reveal-up">
+                        <div class="member-card-inner">
+                            <div class="member-avatar"><img src="members/member-20.jpg" alt="Member photo"
+                                    onerror="this.classList.add('photo-missing'); this.style.display='none';"><span>SA</span>
+                            </div>
+                            <h4>Mr. Shiyas A S</h4>
+                            <p class="member-role">Media & Documentation</p>
+                        </div>
+                        <div class="card-circuit"></div>
+                    </div>
+                    <div class="member-card reveal-up">
+                        <div class="member-card-inner">
+                            <div class="member-avatar"><img src="members/member-21.jpg" alt="Member photo"
+                                    onerror="this.classList.add('photo-missing'); this.style.display='none';"><span>AK</span>
+                            </div>
+                            <h4>Mr. Anantha Krishnan</h4>
+                            <p class="member-role">Media & Documentation</p>
+                        </div>
+                        <div class="card-circuit"></div>
+                    </div>
+                    <div class="member-card reveal-up">
+                        <div class="member-card-inner">
+                            <div class="member-avatar"><img src="members/member-22.jpg" alt="Member photo"
+                                    onerror="this.classList.add('photo-missing'); this.style.display='none';"><span>AL</span>
+                            </div>
+                            <h4>Ms. Aleena</h4>
+                            <p class="member-role">Special Representative</p>
+                        </div>
+                        <div class="card-circuit"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Class/Year Representatives -->
+            <div class="people-category" id="class-reps">
+                <h3 class="category-title reveal-up"><span class="gold-line"></span>Class Representatives</h3>
+                <div class="members-grid">
+                    <div class="member-card reveal-up">
+                        <div class="member-card-inner">
+                            <div class="member-avatar"><img src="members/member-23.jpg" alt="Member photo"
+                                    onerror="this.classList.add('photo-missing'); this.style.display='none';"><span>AD</span>
+                            </div>
+                            <h4>Mr. Adithyan</h4>
+                            <p class="member-role">Class Representative</p>
+                        </div>
+                        <div class="card-circuit"></div>
+                    </div>
+                    <div class="member-card reveal-up">
+                        <div class="member-card-inner">
+                            <div class="member-avatar"><img src="members/member-24.jpg" alt="Member photo"
+                                    onerror="this.classList.add('photo-missing'); this.style.display='none';"><span>AN</span>
+                            </div>
+                            <h4>Ms. Akhila S Nair</h4>
+                            <p class="member-role">Class Representative</p>
+                        </div>
+                        <div class="card-circuit"></div>
+                    </div>
+                    <div class="member-card reveal-up">
+                        <div class="member-card-inner">
+                            <div class="member-avatar"><img src="members/member-25.jpg" alt="Member photo"
+                                    onerror="this.classList.add('photo-missing'); this.style.display='none';"><span>ER</span>
+                            </div>
+                            <h4>Mr. Ervin J Mathew</h4>
+                            <p class="member-role">Class Representative</p>
+                        </div>
+                        <div class="card-circuit"></div>
+                    </div>
+                    <div class="member-card reveal-up">
+                        <div class="member-card-inner">
+                            <div class="member-avatar"><img src="members/member-26.jpg" alt="Member photo"
+                                    onerror="this.classList.add('photo-missing'); this.style.display='none';"><span>SV</span>
+                            </div>
+                            <h4>Ms. Sreya V K</h4>
+                            <p class="member-role">Class Representative</p>
+                        </div>
+                        <div class="card-circuit"></div>
+                    </div>
+                    <div class="member-card reveal-up">
+                        <div class="member-card-inner">
+                            <div class="member-avatar"><img src="members/member-27.jpg" alt="Member photo"
+                                    onerror="this.classList.add('photo-missing'); this.style.display='none';"><span>SV</span>
+                            </div>
+                            <h4>Mr. Sanjay S</h4>
+                            <p class="member-role">Refreshment Committee</p>
+                        </div>
+                        <div class="card-circuit"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Back to Home -->
+    <div style="text-align:center; padding: 2rem 0 4rem;">
+        <a href="index.html" class="btn-hero btn-hero-gold">
+            <span>← BACK TO HOME</span>
+        </a>
+    </div>
+
+    </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer id="footer">
+        <div class="footer-container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <img src="mllogo.jpeg" alt="Vyuha" class="footer-logo">
+                    <div>
+                        <h3>VYUHA</h3>
+                        <p>AI &amp; ML Association</p>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-col">
+                        <h4>Navigate</h4>
+                        <a href="index.html#beginning">About</a>
+                        <a href="index.html#people">Members</a>
+                        <a href="index.html#explore">Explore</a>
+                        <a href="index.html#events">Events</a>
+                    </div>
+                    <div class="footer-col">
+                        <h4>More</h4>
+                        <a href="index.html#projects">Projects</a>
+                        <a href="index.html#resources">Resources</a>
+                        <a href="index.html#roadahead">Road Ahead</a>
+                        <a href="index.html#join">Join Us</a>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Connect</h4>
+                        <a href="#" target="_blank">Instagram ↗</a>
+                        <a href="#" target="_blank">LinkedIn ↗</a>
+                        <a href="#" target="_blank">GitHub ↗</a>
+                        <a href="mailto:vyuha@college.edu">Email ↗</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Vyuha — AI &amp; ML Association. Where curiosity becomes intelligence.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script>
+        // ===== CURSOR GLOW =====
+        const cursorGlow = document.getElementById('cursor-glow');
+        let mouseX = 0, mouseY = 0, cursorX = 0, cursorY = 0;
+        document.addEventListener('mousemove', (e) => { mouseX = e.clientX; mouseY = e.clientY; });
+        function animateCursor() {
+            cursorX += (mouseX - cursorX) * 0.08;
+            cursorY += (mouseY - cursorY) * 0.08;
+            if (cursorGlow) {
+                cursorGlow.style.left = cursorX + 'px';
+                cursorGlow.style.top = cursorY + 'px';
+            }
+            requestAnimationFrame(animateCursor);
+        }
+        animateCursor();
+
+        // ===== NAVBAR SCROLL =====
+        const navbar = document.getElementById('navbar');
+        const navToggle = document.getElementById('navToggle');
+        const navLinks = document.getElementById('navLinks');
+        window.addEventListener('scroll', () => {
+            if (navbar) {
+                navbar.classList.toggle('scrolled', window.scrollY > 80);
+            }
+        });
+        if (navToggle && navLinks) {
+            navToggle.addEventListener('click', () => {
+                navToggle.classList.toggle('active');
+                navLinks.classList.toggle('open');
+                document.body.style.overflow = navLinks.classList.contains('open') ? 'hidden' : '';
+            });
+        }
+
+        // ===== GSAP REVEAL =====
+        gsap.registerPlugin(ScrollTrigger);
+
+        gsap.utils.toArray('.reveal-up').forEach(el => {
+            gsap.fromTo(el,
+                { opacity: 0, y: 30 },
+                {
+                    opacity: 1, y: 0, duration: 0.6, ease: 'power2.out',
+                    scrollTrigger: {
+                        trigger: el, start: 'top 90%', once: true,
+                        onEnter: () => el.classList.add('is-visible')
+                    }
+                }
+            );
+        });
+
+        // ===== MEMBER CARD 3D TILT =====
+        document.querySelectorAll('.member-card').forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                const rotateX = ((y - rect.height / 2) / rect.height) * -4;
+                const rotateY = ((x - rect.width / 2) / rect.width) * 4;
+                card.style.transform = `perspective(600px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-6px)`;
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'perspective(600px) rotateX(0) rotateY(0) translateY(0)';
+            });
+        });
+    </script>
+</body>
+
+</html>

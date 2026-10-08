@@ -1,0 +1,11 @@
+# Operating System files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Vercel & Node
+.vercel
+node_modules/
+.env
+.env.local
+*.log
